@@ -3,162 +3,216 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tester Recruitment | Aura Game</title>
+    <title>Términos y Condiciones - Aura Game Testers</title>
     <style>
+        :root {
+            --primary: #bc6ff1;
+            --danger: #ff4d4d;
+            --bg: #0b0b0e;
+            --card: #16161d;
+            --text: #eeeeee;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #0f0f12;
-            color: #e0e0e0;
-            line-height: 1.6;
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
             margin: 0;
             padding: 0;
             display: flex;
             justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+            line-height: 1.6;
         }
 
         .container {
-            width: 90%;
+            width: 95%;
             max-width: 700px;
-            background: #1a1a20;
+            background: var(--card);
+            margin: 30px auto;
             padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            border: 1px solid #333;
-            margin: 20px;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+            border: 1px solid #2a2a35;
+            box-sizing: border-box;
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 2px solid var(--primary);
+            margin-bottom: 30px;
+            padding-bottom: 10px;
         }
 
         h1 {
-            color: #9d4edd;
-            text-align: center;
+            font-size: 1.6rem;
+            color: var(--primary);
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
+            margin: 0;
+        }
+
+        .warning-box {
+            background: rgba(255, 77, 77, 0.1);
+            border: 1px solid var(--danger);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
             margin-bottom: 30px;
         }
 
-        .alert {
-            background: rgba(255, 183, 0, 0.1);
-            border-left: 5px solid #ffb700;
-            padding: 15px;
-            margin-bottom: 25px;
-            color: #ffb700;
-            font-weight: bold;
+        .warning-box b {
+            color: var(--danger);
+            display: block;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
         }
 
         h2 {
+            font-size: 1.1rem;
             color: #fff;
-            border-bottom: 1px solid #333;
-            padding-bottom: 10px;
-            font-size: 1.4rem;
+            margin-top: 25px;
+            text-transform: uppercase;
+            border-left: 3px solid var(--primary);
+            padding-left: 10px;
         }
 
-        ul {
+        .legal-text {
+            font-size: 0.95rem;
+            color: #bbb;
+            background: #1e1e26;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .list-items {
             list-style: none;
             padding: 0;
         }
 
-        ul li {
-            background: #25252d;
-            margin-bottom: 10px;
-            padding: 12px 15px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
+        .list-items li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
         }
 
-        ul li::before {
-            content: "✦";
-            color: #9d4edd;
-            margin-right: 15px;
+        .list-items li::before {
+            content: "✔";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
             font-weight: bold;
         }
 
         .important {
-            color: #ff4d4d;
+            color: var(--danger);
             font-weight: bold;
+            text-decoration: underline;
         }
 
-        .benefits {
-            background: rgba(157, 78, 221, 0.1);
-            border: 1px dashed #9d4edd;
+        .benefits-section {
+            background: linear-gradient(145deg, #1e1e2a, #16161d);
             padding: 20px;
             border-radius: 10px;
-            margin-top: 25px;
+            border: 1px solid #3b3b4f;
+            margin-top: 20px;
         }
 
-        .benefits h3 {
-            margin-top: 0;
-            color: #c8b6ff;
-        }
-
-        .btn-container {
-            text-align: center;
-            margin-top: 30px;
-        }
-
-        .btn {
-            background: #9d4edd;
+        .btn-link {
+            display: block;
+            background: var(--primary);
             color: white;
-            padding: 15px 30px;
+            text-align: center;
+            padding: 18px;
+            margin-top: 40px;
             text-decoration: none;
-            border-radius: 5px;
             font-weight: bold;
-            transition: 0.3s;
-            display: inline-block;
+            font-size: 1.1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
         }
 
-        .btn:hover {
-            background: #7b2cbf;
-            transform: translateY(-2px);
+        .btn-link:hover {
+            background: #a450e6;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(188, 111, 241, 0.4);
+        }
+
+        .btn-link:active {
+            transform: scale(0.98);
         }
 
         .footer {
             text-align: center;
-            margin-top: 30px;
-            font-size: 0.9rem;
+            margin-top: 40px;
+            font-size: 0.8rem;
             color: #666;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+                margin: 15px auto;
+            }
+            h1 { font-size: 1.3rem; }
+            .btn-link { font-size: 1rem; }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>Aura Game: Testing Program</h1>
-        
-        <div class="alert">
-            ⚠️ ADVERTENCIA: LEER LA DESCRIPCIÓN DEL GRUPO ES OBLIGATORIO.
-        </div>
-
-        <p>¡Bienvenido al nuevo grupo oficial para Testers! Estamos buscando personas comprometidas para ayudarnos a pulir la experiencia de <strong>Aura Game</strong>.</p>
-
-        <h2>Requisitos de Admisión</h2>
-        <ul>
-            <li><strong>Antigüedad:</strong> Tu cuenta debe tener al menos 7 días de haber sido creada.</li>
-            <li><strong class="important">Confidencialidad:</strong> Prohibido filtrar o pasar cualquier tipo de información, imágenes o videos del juego. El incumplimiento resultará en <strong>PERMABAN</strong> inmediato.</li>
-            <li><strong>Propósito:</strong> El acceso es únicamente con fines de testeo y reporte de errores, no para jugar por diversión de forma casual.</li>
-        </ul>
-
-        <div class="benefits">
-            <h3>🎁 Beneficios por tu ayuda:</h3>
-            <ul>
-                <li>Participación en <strong>Sorteos de Robux</strong> exclusivos para el equipo de Testers.</li>
-                <li>Rango y reconocimiento especial como <strong>Tester Oficial</strong> en el juego final.</li>
-            </ul>
-        </div>
-
-        <p style="text-align: center; margin-top: 20px; font-weight: bold; color: #00ff88;">
-            ¡DISPONIBLE SOLO PARA LAS PRIMERAS 5 PERSONAS!
-        </p>
-
-        <div class="btn-container">
-            <a href="#" class="btn">SOLICITAR UNIRME AHORA</a>
-        </div>
-
-        <div class="footer">
-            Gracias a todos por apoyar el desarrollo de Aura Game.
-        </div>
+<div class="container">
+    <div class="header">
+        <h1>Aura Game: Términos del Tester</h1>
     </div>
+
+    <div class="warning-box">
+        <b>⚠️ ADVERTENCIA OBLIGATORIA</b>
+        Es estrictamente obligatorio leer la descripción del grupo y aceptar estos términos antes de proceder.
+    </div>
+
+    <p style="text-align: justify;">Al solicitar acceso al programa de pruebas de <strong>Aura Game</strong>, usted acepta cumplir con las siguientes cláusulas:</p>
+
+    <h2>1. Requisitos de Identidad</h2>
+    <div class="legal-text">
+        Solo se admitirán usuarios cuyas cuentas tengan una antigüedad mínima de <b>7 días</b>. Cuentas creadas recientemente serán rechazadas automáticamente.
+    </div>
+
+    <h2>2. Acuerdo de Confidencialidad (NDA)</h2>
+    <div class="legal-text">
+        Queda estrictamente prohibido compartir capturas de pantalla, videos o cualquier tipo de información interna del desarrollo. 
+        <span class="important">Cualquier filtración resultará en un PERMABAN (Baneo Permanente) de todos nuestros servicios.</span>
+    </div>
+
+    <h2>3. Propósito del Programa</h2>
+    <div class="legal-text">
+        El acceso es <strong style="color:white;">exclusivamente para fines de testeo</strong>. El usuario se compromete a reportar errores y no a utilizar la versión de prueba como un medio de entretenimiento casual.
+    </div>
+
+    <h2>4. Cupos Limitados</h2>
+    <p>Este proceso de selección está abierto únicamente para las <b>5 primeras personas</b> que envíen su solicitud correctamente.</p>
+
+    <div class="benefits-section">
+        <h2 style="margin-top:0; border:none; padding:0;">Recompensas y Beneficios</h2>
+        <ul class="list-items">
+            <li>Sorteo de <strong>Robux</strong> exclusivo para el equipo de trabajo.</li>
+            <li>Reconocimiento oficial como <strong>Tester</strong> en el lanzamiento del juego real.</li>
+        </ul>
+    </div>
+
+    <p style="font-size: 0.85rem; color: #888; margin-top: 20px; text-align: center;">
+        Al hacer clic en el botón de abajo, confirmas que has leído y aceptas todos los puntos anteriores.
+    </p>
+
+    <a href="https://forms.gle/G3VxsCMy2GzWzkTP7" target="_blank" class="btn-link">Aceptar y Unirme Ahora</a>
+
+    <div class="footer">
+        Aura Game Development &copy; 2026<br>
+        Gracias por ayudarnos a mejorar.
+    </div>
+</div>
 
 </body>
 </html>
